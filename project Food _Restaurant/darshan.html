@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Food  Restaurant </title>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+	<link rel="stylesheet" type="text/css" href="Food_Restaurant.css">
+
+	<style>
+		:root{
+	--red:#ff3838;
+}
+*{
+	font-family: 'Nunito',sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	outline: none;
+	border: none;
+	text-decoration: none;
+	transition:all .2s linear ;
+}
+*::selection{
+	background: :var(--red);
+	color:#fff ;
+}
+html{
+	font-size: 62.5%;
+	overflow-x: hidden;
+	scroll-behavior: smooth;
+	scroll-padding-top: 6rem;
+}
+body{
+	background: #f7f7f7;
+}
+selection{
+	padding: 2rem 9%;
+}
+.heading{
+	text-align: center;
+	font-size: 3.5rem;
+	padding: 1rem;
+	color: #666;
+
+}
+.heading span{
+	color: var(--red);
+}
+.btn{
+	display: inline-block;
+	padding: 1rem 2rem;
+	border: .1rem solid var(--red);
+	color: var(--red);
+	cursor: pointer;
+	font-size: 1.7rem;
+	border-radius: .5rem;
+	position: relative;
+	overflow: hidden;
+	z-index: 0;
+	margin-top: 1rem;
+	margin-left: 8%;
+}
+.btn::before{
+	content: '';
+	position: absolute;
+	top: 0; right: 0;
+	width: 0%;
+	height: 100%;
+	background: var(--red);
+	transition: .3s linear;
+	z-index: -1;
+}
+.btn:hover::before{
+     width: 100%;
+     left: 0;
+}
+.btn:hover{
+	color: white;
+}
+header{
+	position: fixed;
+	top: 0; left: 0; right: 0;
+	display: flex;
+	z-index: 1000;
+	align-items: center;
+	justify-content: space-between;
+	background:#fff ;
+	padding: 2rem 9%;
+	box-shadow: 0.5rem 1rem rgba(0, 0, 0, .1);
+}
+
+header.logo {
+	font-size: 2.5rem;
+	font-weight: bolder;
+	color: #666;
+}
+
+header .logo i{
+	padding-right: .5rem;
+	color: var(--red);
+}
+header .navbar a{
+	font-size: 2rem;
+	margin-left: 2rem;
+	color: #666;
+}
+header .navbar a:hover{
+	color:var(--red) ;
+}
+#menu-bar{
+	font-size: 3rem;
+	cursor: pointer;
+	color: #666;
+	border: 1rem solid #666;
+	border-radius: .3rem;
+	padding: .5rem 1.5rem;
+	display: none;
+}
+.home{
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1.5rem;
+	min-height: 100vh;
+	align-items: center;
+	background: url('') no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+.home .content{
+	flex: 1 1 40rem;
+	padding-top:6.5rem ;
+}
+
+.home .image{
+	flex: 1 1 40rem;
+}
+
+.home .image img{
+	width: 100%;
+	padding: 1rem;
+	animation: float 3s linear infinite;
+}
+@keyframes float{
+	0%,100%{
+		transform: translateY(0rem);
+	}
+	50%{
+		transform: translateY(3rem);
+	}
+}
+
+.home .content h3{
+	font-size: 5rem;
+	color: #333;
+}
+
+.home .content p{
+	font-size: 1.7rem;
+	color: #666;
+	padding: 1rem 0;
+}
+
+.speciality .box-container{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.speciality .box-container .box{
+  display: flex;
+  flex:1 1 40rem ;
+  height: 30vh;
+  width: 30%;
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.1);
+	position: relative;
+	overflow: hidden;
+	border: 1rem solid rgba( 0, 0, .3);
+	cursor: pointer;
+	border-radius: 5%;
+
+
+}
+.speciality .box-container .box .image{
+	 height: 100%;
+	 width: 100%;
+	 
+	 position: absolute;
+	 top: -100%;left: 0;
+
+}
+.speciality .box-container .box .content{
+	     text-align: center;
+	     background: #fff;
+	     padding: 2rem;
+
+       
+}
+.speciality .box-container .box .content h3{
+	font-size: 2.5rem;
+	color: #333;
+}
+
+
+.speciality .box-container .box .content p{
+	font-size: 1.6rem;
+	color: #666;
+	padding: 1rem 0;
+}
+
+.speciality .box-container .box:hover .image{
+	top: 0;
+}
+.speciality .box-container .box:hover .content{
+	 transform: translateY(100%);
+}
+.speciality .box-container .box .content .img2{
+	height: 10vh;
+	width: 20%;
+}
+.popular .box-container{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+}
+.popular .box-container .box{
+          margin-left: 4%;
+	      padding: 2rem;
+	      background: #fff;
+	      box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+	      border-radius: .5rem;
+	      border: 0 solid rgba(0, 0, 0,.3);
+	      text-align: center;
+	      flex: 1 1 40rem;
+	      position: relative;
+}
+.popular .box-container .box img{
+        height: 25rem;
+        border-radius: 5%;
+        width: 100%;
+}
+.popular .box-container .box .price{
+	 position: absolute;
+	 top: 3rem;
+	 left: 3rem;
+	 background: var(--red);
+	 color: black;
+	 font-size: 2rem;
+	 padding: .5rem 1rem;
+	 border-radius: .5rem;
+}
+
+.popular .box-container .box h3{
+	color: #333;
+	font-size:2.5rem ;
+	padding-top: 1rem;
+}
+.popular .box-container .box .stars{
+	color: gold;
+	font-size: 1.7rem;
+	padding: 1rem .1rem;
+}
+.steps{
+	display: flex;
+	flex-wrap: wrap;
+	padding: 1rem 0;
+	gap: 2.5rem;
+	margin-left: 7%;
+	}
+
+.dk{
+	width: 70%;
+	height: 60%;
+	border-radius: 10%;
+
+	}
+	.box1{
+		display: flex;
+	}
+	.steps .box img{
+		border-radius: 80%;
+		border: 1rem solid #fff;
+		box-shadow: 0 .5rem 1rem rgba(0, 0, 0,.1);
+	}
+	.steps .box h3{
+		font-size: 3rem;
+		color: #333;
+		padding: 1rem 0;
+	}
+	.gallery .box-container{
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1rem;
+		width: 90%;
+	margin-left: 4%;
+	}
+.gallery .box-container .box{
+	height: 50vh;
+	flex: 1 1 40rem;
+	border: 1rem solid #fff;
+	box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+	border-radius: .5rem;
+	position: relative;
+	overflow: hidden;
+}
+
+.gallery .box-container .box .img3{
+   height: 50vh;
+	width: 100%;
+}
+.gallery .box-container .box img{
+	 height: 25rem;
+	 width: 100%;
+	 object-fit: cover;
+
+}
+.gallery .box-container .box .content{
+
+	  position: absolute;
+	  top: -100%; left: 0;
+	  height: 100%;
+	  width: 100%;
+	  background: rgba(225,255,255,.9);
+	  padding: 2rem;
+	  padding-top: 5rem;
+	  text-align: center;
+}
+.gallery .box-container .box .content h3{
+	font-size: 2.5rem;
+	color: #333;
+}
+
+.gallery .box-container .box .content p{
+	font-size: 1.5rem;
+	color: #666;
+	padding: 1rem 0;
+
+}
+
+.gallery .box-container .box:hover .content{
+	top: 0;
+}
+.img4{
+	height: 20vh;
+	width: 30%;
+  
+}
+.review .box-container{
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1.5rem;
+	width: 90%;
+	margin-left: 4%;
+
+}
+
+.review .box-container .box{
+	text-align: center;
+	padding: 2rem;
+	border-radius: 1rem solid #fff;
+	box-shadow: 0 .5rem 1rem rgba(0, 0, 0,.9);
+	border-radius: .5rem;
+	flex: 1 1 20rem;
+	margin-top: 8vh;
+
+}
+.review .box-container .box img{
+	height: 12rem;
+	width: 12rem;
+	border-radius: 50%;
+	border: 1rem solid #fff;
+	margin-top: -8rem;
+	object-fit: cover;
+}
+.review .box-container .box h3{
+	 font-size: 2.5rem;
+	 color: black;
+	 padding: 2rem 0;
+}
+
+.review .box-container .box .stars i{
+	 font-size: 2rem;
+	 color: var(--red);
+	 padding: 2rem 0;
+}
+.review .box-container .box p{
+	 font-size: 1.5rem;
+	 color: black;
+	 padding: 1rem 0;
+}
+
+
+.order .row{
+
+padding: 2rem;
+box-shadow: 0 .5rem 1rem rgba(0, 0, 0,.1);
+background: #fff;
+display: flex;
+flex-wrap: wrap;
+gap: 1.5rem;
+border-radius: .5rem;
+}
+.order .row .image{
+	flex: 1 1 30rem;
+}
+.order .row .image img{
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	border-radius: 5rem;
+
+}
+
+.order .row form{
+	flex: 1 1 50rem;
+	padding: 1rem;
+}
+.order .row form .inputBox{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	
+}
+
+.order .row form .inputBox input , .order .row form textarea{
+	padding: 1rem;
+	margin-left: 1rem 0;
+	font-size: 1.7rem;
+	color: #333;
+	text-transform: none;
+	border: .1rem solid rgba(0, 0, 0, .3);
+	border-radius: .5rem;
+	width: 49%;
+}
+
+.order .row form textarea{
+	width: 100%;
+	resize: none;
+	height: 15rem;
+}
+.order .row form .btn{
+background: none;
+}
+.order .row form .btn:hover{
+	background: var(--red);
+}
+.footer{
+	background: #000;
+	text-align: center;
+}
+
+.footer .share{
+	display: flex;
+	gap: 1.5rem;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+.footer .credit{
+	padding: 2.5rem 1rem ;
+	color: #fff;
+	font-weight: normal;
+	font-size: 2rem ;
+}
+
+.footer .credit span{
+	color: var(--red);
+}
+#scroll-top{
+	position: fixed;
+	top:-120%
+	right: 2rem;
+	padding: 5rem 1.5rem;
+	font-size: 4rem;
+	background: var(--red);
+	color: #fff;
+	border-radius: .5rem;
+	transition: 1s linear ;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media(max-width:991px){
+	html{
+	font-size: 55%;
+}
+
+header{
+	padding: 2rem;
+}
+selection{
+	padding: 2rem ;
+}
+}
+
+@media(max-width:768px){
+
+  #menu-bar{
+  	display:initial ;
+  }
+  header .navbar{
+  	position: absolute;
+  	top: 100%; left: 0; right: 0;
+  	background: #f7f7f7;
+  	border-top: 1rem solid rgba(0, 0, 0, .1);
+  	clip-path: polygon(0 0, 100% 0, 100% 0 ,0 0);
+  }
+
+  header .navbar.active{
+  	 clip-path: polygon(0 0, 100% 0, 100% 100% , 0% 100%);
+  }
+
+  header .navbar a{
+  	margin: 1.5rem;
+  	padding: 1.5rem;
+  	display: block;
+  	border: 2rem solid rgba(0, 0, 0, .1);
+  	border-left: 2rem solid var(--red);
+  	background: #fff;
+  }
+}
+
+@media(max-width:450px){
+	html{
+	font-size: 50%;
+}
+.order .row form .inputBox input{
+	width: 100%;
+}
+}
+
+
+
+
+
+
+
+		
+	</style>
+</head>
+<body>
+        
+        <header>
+        	<a href="#" class="logo"><i class="fas fa-utensils"></i></a>
+                 
+                <div id="menu-bar" class="fas fa-bars"></div>
+
+                 <nav class="navbar">
+
+                 	<a href="#home">Home</a>
+                 	<a href="#speciality">Speciality</a>
+                 	<a href="#popular">Popular</a>
+                 	<a href="#gallery">Gallery</a>
+                 	<a href="#reviwe">Reviwe</a>
+                 	<a href="#order">Order</a>
+                 	
+                 </nav>
+                         </header>
+
+<!-- home section starts-->
+
+
+<section class="home" id="home">
+	 <div class="content">
+	 	<h3>Food Mand With Loves</h3>
+	 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	 	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	 	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	 	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+	 	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+	 	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+	 	<a href="#" class="btn">Order Now</a>
+	 </div>
+
+	 <div class="image">
+	 	<img src="https://www.freepnglogos.com/uploads/burger-png/burger-png-png-images-yellow-images-12.png" alt="">
+	 	
+	 </div>
+</section>
+
+
+<!-- Specialilty section-->
+
+<section class="speciality" id="speciality">
+	 <h1 class="heading">Our<span>Speciality</span></h1>
+
+	 <div class="box-container">
+	 	<div class="box">
+	 		<img class="image" src="https://img.freepik.com/free-psd/still-life-melted-cheese_23-2150638016.jpg?size=626&ext=jpg&ga=GA1.1.386372595.1698278400&semt=ais" alt="">
+	 		<div class="content">
+	 			<img src="https://images.emojiterra.com/google/android-11/512px/1f354.png" alt="" class="img2">
+	 			<h3>Testy Burger</h3>
+	 		   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	 		   tempor incididunt ut labore et dolore magna aliqua.</p>	
+	 		</div>
+	 	</div> 
+
+                
+             
+	 	<div class="box">
+	 		<img class="image" src="https://us.123rf.com/450wm/mitdesign/mitdesign1906/mitdesign190600034/125105478-top-view-of-pepperoni-pizza-with-stringy-cheese-on-chrome-yellow-background-in-3d-illustration.jpg?ver=6" alt="">
+	 		<div class="content">
+	 			<img src="https://cdn-icons-png.flaticon.com/256/1256/1256468.png" alt="" class="img2">
+	 			<h3>Testy Pizaa</h3>
+	 		   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	 		   tempor incididunt ut labore et dolore magna aliqua.</p>	
+	 		</div>
+	 	</div> 
+
+	 	
+	 	<div class="box">
+	 		<img class="image" src="https://food.fnr.sndimg.com/content/dam/images/food/fullset/2022/02/28/iced-coffee-beans-jar-white-pitcherglass-spoon-wood-surface.jpg.rend.hgtvcom.1280.960.suffix/1646098022774.jpeg" alt="">
+	 		<div class="content">
+	 			<img src="https://i.pinimg.com/564x/49/80/c1/4980c1e15bf71fa90c5cb823a0da5a42.jpg" alt="" class="img2">
+	 			<h3>Cold coffee</h3>
+	 		   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	 		   tempor incididunt ut labore et dolore magna aliqua.</p>	
+	 		</div>
+	 	</div> 
+
+	 	
+	 	<div class="box">
+	 		<img class="image" src="https://c.ndtvimg.com/2023-05/g6hd9p5g_sugar-free-summer-drinks_625x300_02_May_23.jpg?im=FeatureCrop,algorithm=dnn,width=1200,height=675" alt="">
+	 		<div class="content">
+	 			<img src="https://assets.streamlinehq.com/image/private/w_200,h_200,ar_1/f_auto/v1/icons/freebies-freemojis/food-drink/food-drink/clinking-glasses-3-7t8q6mfud0avax5pn42euh.png?_a=BAJFJtWIC" alt=""class="img2">
+	 			<h3>Drinks</h3>
+	 		   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	 		   tempor incididunt ut labore et dolore magna aliqua.</p>	
+	 		</div>
+	 	</div> 
+
+	 	
+	 	<div class="box">
+	 		<img class="image" src="https://i.redd.it/4pkak0wg71v51.jpg" alt="">
+	 		<div class="content">
+	 			<img src="https://image.emojisky.com/508/440508-middle.png" alt="" class="img2">
+	 			<h3>cold ice-cream</h3>
+	 		   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	 		   tempor incididunt ut labore et dolore magna aliqua.</p>	
+	 		</div>
+	 	</div> 
+
+	 	
+	 	<div class="box">
+	 		<img class="image" src="https://i.iheart.com/v3/re/new_assets/6400f45d6d198cd43ac62ba0?ops=contain(1480,0)" alt="">
+	 		<div class="content">
+	 			<img src="https://banner2.cleanpng.com/20180212/goe/kisspng-breakfast-toast-eating-food-european-cuisine-vector-eat-breakfast-5a815393316983.9258030115184249792024.jpg" alt="" class="img2">
+	 			<h3>healthy breackfast</h3>
+	 		   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	 		   tempor incididunt ut labore et dolore magna aliqua.</p>	
+	 		</div>
+	 	</div> 
+	 </div>
+</section>
+
+ 
+ <!-- popular section start -->
+
+ <section class="popular" id="popular">
+ 	 <h1 class="heading">Most<span>Popular</span>Foods</h1>
+
+          <div class="box-container">
+          	<div class="box">
+          		<span class="price">$5-$20</span>
+          		<img src="https://img.freepik.com/free-psd/still-life-melted-cheese_23-2150638016.jpg?size=626&ext=jpg&ga=GA1.1.386372595.1698278400&semt=ais"alt="">
+          		<h3>Testy Burger</h3>
+          		<div class="stars">
+          			
+          			<i class="fa-solid fa-star"></i>
+          			<i class="fa-solid fa-star"></i>
+          			<i class="fa-solid fa-star"></i>
+          			<i class="fa-regular fa-star"></i>
+          			<i class="fa-regular fa-star"></i>
+          			
+          			
+          		</div>
+          		<a href="#" class="btn">Order Now</a>
+          	</div>
+
+          	<div class="box">
+          		<span class="price">$5-$20</span>
+          		<img src="https://liliyum.com/cdn/shop/products/rainbowcake_800x.jpg?v=1664974840"alt="">
+          		<h3>Testy cakes</h3>
+          		<div class="stars">
+          			
+          			<i class="fa-solid fa-star"></i>
+          			<i class="fa-solid fa-star"></i>
+          			<i class="fa-solid fa-star"></i>
+          			<i class="fa-regular fa-star"></i>
+          			<i class="fa-regular fa-star"></i>
+          			
+          			
+          		</div>
+          		<a href="#" class="btn">Order Now</a>
+          	</div>
+
+          	<div class="box">
+          		<span class="price">$5-$20</span>
+          		<img src="https://t4.ftcdn.net/jpg/02/41/52/69/360_F_241526904_sSMfZFR8EP5XluEwjGtXwv5VDRXRKLP3.jpg"alt="">
+          		<h3>Testy sweets</h3>
+          		<div class="stars">
+          			
+          			<i class="fa-solid fa-star"></i>
+          			<i class="fa-solid fa-star"></i>
+          			<i class="fa-solid fa-star"></i>
+          			<i class="fa-regular fa-star"></i>
+          			<i class="fa-regular fa-star"></i>
+          			
+          			
+          		</div>
+          		<a href="#" class="btn">Order Now</a>
+          	</div>
+
+          	<div class="box">
+          		<span class="price">$5-$20</span>
+          		<img src="https://handletheheat.com/wp-content/uploads/2021/02/chocolate-cupcakes-SQUARE-550x550.png"alt="">
+          		<h3>Testy cupcakes</h3>
+          		<div class="stars">
+          			
+          			<i class="fa-solid fa-star"></i>
+          			<i class="fa-solid fa-star"></i>
+          			<i class="fa-solid fa-star"></i>
+          			<i class="fa-regular fa-star"></i>
+          			<i class="fa-regular fa-star"></i>
+          			
+          			
+          		</div>
+          		<a href="#" class="btn">Order Now</a>
+          	</div>
+                
+                <div class="box">
+          		<span class="price">$5-$20</span>
+          		<img src="https://www.eatthis.com/wp-content/uploads/sites/4/2021/12/cocktails-on-bar.jpg?quality=82&strip=1"alt="">
+          		<h3>Drinks</h3>
+          		<div class="stars">
+          			
+          			<i class="fa-solid fa-star"></i>
+          			<i class="fa-solid fa-star"></i>
+          			<i class="fa-solid fa-star"></i>
+          			<i class="fa-regular fa-star"></i>
+          			<i class="fa-regular fa-star"></i>
+          			
+          			
+          		</div>
+          		<a href="#" class="btn">Order Now</a>
+          	</div>
+
+                <div class="box">
+          		<span class="price">$5-$20</span>
+          		<img src="https://thumbs.dreamstime.com/b/french-fries-17661700.jpg"alt="">
+          		<h3>french fries</h3>
+          		<div class="stars">
+          			
+          			<i class="fa-solid fa-star"></i>
+          			<i class="fa-solid fa-star"></i>
+          			<i class="fa-solid fa-star"></i>
+          			<i class="fa-regular fa-star"></i>
+          			<i class="fa-regular fa-star"></i>
+          			
+          			
+          		</div>
+          		<a href="#" class="btn">Order Now</a>
+          	</div>
+
+          </div>
+
+
+ </section>
+
+
+<!-- steps section start -->
+
+  <section class="steps">
+  	          <div class="box1">
+  	       <div class="box">
+  	       	<img src="https://media.istockphoto.com/id/1038356020/vector/restaurant-icon.jpg?s=612x612&w=0&k=20&c=Tk_v3JuJA4lz_8ZRJi78xS4p75Idqt97uEtYJciVtFI=" alt="" class="dk">
+  	       	<h3>Choose your <p>favorite food</p></h3>
+  	       </div>
+
+  	       <div class="box">
+  	       	<img src="https://img.freepik.com/premium-vector/express-delivery-label-courier-boy-riding-motor-bike-vector-logo_212474-687.jpg" alt=""class="dk">
+  	       	<h3>Free and<p> fast delivery</p></h3>
+  	       </div>
+
+  	       <div class="box">
+  	       	<img src="https://themoneymethod.in/wp-content/uploads/2023/02/The-Money-Method-LOGO.png" alt=""class="dk">
+  	       	<h3>Easy payments <p>methods</p></h3>
+  	       </div>
+
+  	       <div class="box">
+  	       	<img src="https://img.freepik.com/premium-vector/family-food-logo-template-design_20029-440.jpg" alt=""class="dk">
+  	       	<h3>And family<p>enjoy you food</p> </h3>
+  	       </div>
+  	</div>
+  </section>
+
+
+
+
+
+<!-- gallery section -->
+                    
+                    <section class="gallery" id="gallery">
+                    	<h1 class="heading">Our<span>Gallery</span>Foods</h1>
+                             
+                             <div class="box-container">
+
+                    	<div class="box">
+                    		<img src="https://www.cookwithnabeela.com/wp-content/uploads/2023/09/ChickenBiryani.webp"alt="" class="img3">
+                    	<div class="content">
+                    		<h3>Chicken Biryani</h3>
+                    		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+                    			<a href="#" class="btn">Order Now</a>
+                    	</div>	
+                       </div>
+
+                       <div class="box">
+                    		<img src="https://skinnyspatula.com/wp-content/uploads/2022/01/Pink_Pasta_Sauce2.jpg"alt=""class="img3">
+                    	<div class="content">
+                    		<h3>Pink Sauce Pasta</h3>
+                    		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+                    			<a href="#" class="btn">Order Now</a>
+                    	</div>	
+                       </div>
+
+                       <div class="box">
+                    		<img src="https://www.eatingwell.com/thmb/LQXwKPvgYghCs2LH7bwlsx0gD1Q=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/cucumber-caprese-sandwich-6343482dece14c3d876bc7bac317ecd8.jpg"alt=""class="img3">
+                    	<div class="content">
+                    		<h3>Sandwich</h3>
+                    		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+                    			<a href="#" class="btn">Order Now</a>
+                    	</div>	
+                       </div>
+
+                       <div class="box">
+                    		<img src="https://www.archanaskitchen.com/images/archanaskitchen/0-Archanas-Kitchen-Recipes/2017/0-Archana/4-Chettinad_Veg_Pulao_Recipe_Figaro_Pure_Olive_Oil-1.jpg"alt=""class="img3">
+                    	<div class="content">
+                    		<h3>Pulav</h3>
+                    		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+                    			<a href="#" class="btn">Order Now</a>
+                    	</div>	
+                       </div>
+
+                       <div class="box">
+                    		<img src="https://simmertoslimmer.com/wp-content/uploads/2015/05/Dahi-Vada.jpg"alt=""class="img3">
+                    	<div class="content">
+                    		<h3>Dahi Vada</h3>
+                    		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+                    			<a href="#" class="btn">Order Now</a>
+                    	</div>	
+                       </div>
+
+                       <div class="box">
+                    		<img src="https://www.kashmironlinestore.com/cdn/shop/articles/Untitled_design_54_800x.jpg?v=1692702218"alt=""class="img3">
+                    	<div class="content">
+                    		<h3></h3>
+                    		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+                    			<a href="#" class="btn">Order Now</a>
+                    	</div>	
+                       </div>
+
+                       <div class="box">
+                    		<img src="https://static.toiimg.com/thumb/63799510.cms?imgsize=1091643&width=800&height=800"alt=""class="img3">
+                    	<div class="content">
+                    		<h3>Gulab Jamun</h3>
+                    		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+                    			<a href="#" class="btn">Order Now</a>
+                    	</div>	
+                       </div>
+
+                       <div class="box">
+                    		<img src="https://chandravilas.com/wp-content/uploads/2022/09/1.jpg"alt=""class="img3">
+                    	<div class="content">
+                    		<h3>Papad</h3>
+                    		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+                    			<a href="#" class="btn">Order Now</a>s
+                    	</div>	
+                       </div>
+
+                       <div class="box">
+                    		<img src="https://tiffycooks.com/wp-content/uploads/2021/09/Screen-Shot-2021-09-21-at-5.21.37-PM.png"alt=""class="img3">
+                    	<div class="content">
+                    		<h3>Noodles</h3>
+                    		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+                    			<a href="#" class="btn">Order Now</a>
+                    	</div>	
+                       </div>
+                    	</div>
+
+                    </section>
+
+
+<!-- reviwe sectio !-->
+
+   <section class="review" id="reviwe">
+   	<h1 class="heading">Our Customers<span>Reviews</span>Foods</h1>
+     
+           <div class="box-container">
+           	
+           	<div class="box">
+           		<img src="https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg"alt="" class="img4">
+           		<h3>Darshan kukde</h3>
+           		<div class="stars">
+           			<i class="fa-solid fa-star"></i>
+          			<i class="fa-solid fa-star"></i>
+          			<i class="fa-solid fa-star"></i>
+          			<i class="fa-regular fa-star"></i>
+          			<i class="fa-regular fa-star"></i>
+           		</div>
+           		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+           		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+           	</div>
+
+           	<div class="box">
+           		<img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"alt="" class="img4">
+           		<h3>Aakash Rambhad</h3>
+           		<div class="stars">
+           			<i class="fa-solid fa-star"></i>
+          			<i class="fa-solid fa-star"></i>
+          			<i class="fa-solid fa-star"></i>
+          			<i class="fa-regular fa-star"></i>
+          			<i class="fa-regular fa-star"></i>
+           		</div>
+           		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+           		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+           	</div>
+           	<div class="box">
+           		<img src="https://images.unsplash.com/photo-1610088441520-4352457e7095?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fG1lbnxlbnwwfHwwfHx8MA%3D%3D"alt="" class="img4">
+           		<h3>Rohan Thakare</h3>
+           		<div class="stars">
+           			<i class="fa-solid fa-star"></i>
+          			<i class="fa-solid fa-star"></i>
+          			<i class="fa-solid fa-star"></i>
+          			<i class="fa-regular fa-star"></i>
+          			<i class="fa-regular fa-star"></i>
+           		</div>
+           		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+           		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+           	</div>
+           </div>
+
+   </section>
+
+
+
+<!-- Order section !-->
+
+     <section class="order" id="order">
+     	<h1 class="heading"><span>Order</span>Now</h1>
+
+         <div class="row">
+         	
+               <div class="image">
+               	 <img src="https://media.istockphoto.com/id/1198049220/photo/who-ordered-this-main.jpg?s=612x612&w=0&k=20&c=OUtMWq5AYjFRFy7jjNztSfZ7w4pEunsYgyf96dc8xQ8=" alt="">
+               </div>
+
+               <form action="">
+
+               	<div class="inputBox">
+
+               		<input type="text" placeholder="Name">
+               		<input type="email" placeholder="Email">
+               		
+               	</div>
+
+               	<div class="inputBox">
+
+               		<input type="number" placeholder="number" >
+               		<input type="text" placeholder="Food Name">
+               		
+               	</div>
+
+               	<textarea placeholder="Address" name="" id="" cols="30" rows="10"></textarea>
+               	
+                       <input type="submit" value="Order Now" class="btn">
+
+               </form>
+
+         </div>
+
+
+     </section>
+
+<!-- footer Section -->
+
+<section class="footer">
+	
+
+	<div class="share">
+		<a href="#" class="btn">Facebook</a>
+		<a href="#" class="btn">Twitter</a>
+		<a href="#" class="btn">Instagram</a>
+		<a href="#" class="btn">Pinterest</a>
+		<a href="#" class="btn">Linkedin</a>
+	</div>
+	<h1 class="credit">Created By <span>Mr.Darshan_Kukde</span> | All rights reserved !</h1>
+</section>
+
+
+
+
+
+        <script>
+        	
+        	let menu = document.querySelector('#menu-bar');
+let navbar = document.querySelector('.navbar');
+
+menu.onclick = () =>{
+
+	menu.classList.toggle('fa-times');
+    navbar.classList.toggle('active');
+	
+}
+
+       window.onscroll = () =>{
+
+       	menu.classList.remove('fa-times');
+        navbar.classList.remove('active');
+       }
+
+
+        </script>
+</body>
+</html>
